@@ -19,7 +19,7 @@ const div = (...props) => factory.build("div", ...props)
 Once that is initialized, you can use the `div()` function to create an actual `<div>` [HTMLElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement)-based component with some attributes.
 
 ```js
-const SimpleContainer = div({ id="simpleContainer" })
+const SimpleContainer = div({ id: "simpleContainer" })
 ```
 
 Then you can render that component inside an existing DOM element that you put in your `index.html` file.
@@ -38,7 +38,7 @@ Then you can render that component inside an existing DOM element that you put i
 > app.js
 
 ```js
-const SimpleContainer = div({ id="simpleContainer" })
+const SimpleContainer = div({ id: "simpleContainer" })
 
 factory.render("#content", SimpleContainer)
 ```
@@ -60,7 +60,7 @@ You can pass a second argument to `div()` to specify any text that you want in t
 
 ```js
 const SimpleContainer = div(
-    { id="simpleContainer" },
+    { id: "simpleContainer" },
     "It is not the man who has too little that is poor, but the one who hankers after more."
 )
 
@@ -79,7 +79,7 @@ That code will generate this DOM structure.
 
 ### Nesting Components
 
-Let's make our simple example a tad more complex. I want to create an article component that contains a `<head>` element, which itself contains an `<h1>` element. As a sibling to `<head>`, I want a `<section>` element that contains a quote.
+Let's make our simple example a tad more complex. I want to create an article component that contains a `<header>` element, which itself contains an `<h1>` element. As a sibling to `<header>`, I want a `<section>` element that contains a quote.
 
 This is the final DOM structure that I want.
 

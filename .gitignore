@@ -1,4 +1,5 @@
 node_modules
+*.log
 bower_components
 __pycache__
 *.pyc
