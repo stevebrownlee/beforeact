@@ -26,6 +26,10 @@ const ComponentFactory = () => { /* eslint no-unused-vars: "off" */
 
                   article({}, Patient)
 
+                  ...or comma-separated, sibling HTML elements
+
+                  article({}, Patient, MedicalHistory)
+
                   ...or an array of elements
 
                   p({ className: "list musicList"}, [Song1, Song2, Song3])
