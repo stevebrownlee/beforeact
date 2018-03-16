@@ -134,3 +134,49 @@ Then I can render it.
 ```js
 factory.render("#content", Article)
 ```
+
+## Component Factory
+
+If you look at the `ComponentFactory.js` file, you will immediately notice that I have a function argument preceded by ellipsis.
+
+```js
+function (type, attributes, ...children) {
+
+}
+```
+
+This is the spread operator, or spread syntax. You can read a [quick reference](http://es6-features.org/#SpreadOperator), [MDN documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax), or an [in-depth explanation](https://medium.com/front-end-hacking/es6-magical-stuffs-spread-syntax-in-depth-afdd0118ebd0) to get up to speed.
+
+### How it is Being Used
+
+Using the spread operator turns all arguments after the 2nd into an iterable collection, whether nothing was passed in...
+
+```js
+//Nothing in the children argument. Only 1 parameter.
+div({ className: "list" })
+```
+
+...or text content
+
+```js
+// ...children is now a string
+section({ className: "title" }, "<h1>Movie Application</h1>")
+```
+
+...or an HTML element
+
+```js
+article({}, Patient)
+```
+
+...or comma-separated, sibling HTML elements
+
+```js
+article({}, Patient, MedicalHistory)
+```
+
+...or an array of elements
+
+```js
+p({ className: "list musicList"}, [Song1, Song2, Song3])
+```

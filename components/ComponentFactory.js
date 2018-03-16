@@ -12,28 +12,7 @@ const ComponentFactory = () => { /* eslint no-unused-vars: "off" */
                     element.textContent = attributes
                     return element
                 }
-                /**
-                  Using the spread operator turns all arguments after the 2nd
-                  into an iterable collection, whether nothing was passed in...
 
-                  div({ className: "list" })
-
-                  ...or text content
-
-                  section({ className: "title" }, "<h1>Movie Application</h1>")
-
-                  ...or an HTML element
-
-                  article({}, Patient)
-
-                  ...or comma-separated, sibling HTML elements
-
-                  article({}, Patient, MedicalHistory)
-
-                  ...or an array of elements
-
-                  p({ className: "list musicList"}, [Song1, Song2, Song3])
-                 */
                 if (children.length) {
                     children.forEach(child => {
                         // One HTMLElement was passed in
