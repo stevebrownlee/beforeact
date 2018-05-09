@@ -2,15 +2,17 @@ const ComponentFactory = () => { /* eslint no-unused-vars: "off" */
     return Object.create(null, {
         "build": {
             value: function (type, attributes, ...children) {
-                const element = Object.assign(document.createElement(type), attributes)
+                let element = document.createElement(type)
 
                 /*
                     If `attributes` is just a string, it's a simple element with no
                     properties - just some text content
                 */
-                if (typeof attributes === 'string') {
+                if (typeof attributes === "string") {
                     element.textContent = attributes
                     return element
+                } else if (typeof attributes === "object") {
+                    element = Object.assign(element, attributes)
                 }
 
                 if (children.length) {
