@@ -144,25 +144,31 @@ In _Highlighter.js_ you will see that invoking `Highlighter.init()` returns an o
 The syntax to make something highlightable (?) looks like this.
 
 ```js
-decorate.init()
-        .with(Highlighter.init("highlight--goldenrod"))
-        .done()
+const Container = div(
+    decorate.init({ class: "articleContainer" })
+            .with(Highlighter.init("highlight--goldenrod"))
+            .done()
+)
 ```
 
 How about making something clickable?
 
 ```js
-decorate.init()
-        .with(Clickable.init(() => console.log("Hi")))
-        .done()
+const Container = div(
+    decorate.init({ class: "articleContainer" })
+            .with(Clickable.init(() => console.log("Hi")))
+            .done()
+)
 ```
 
 Draggable? The `init()` method should be provided with the value of "class" or "id". It will use the `classList` property, or the `id` property to identify the component that is being dragged.
 
 ```js
-decorate.init()
-        .with(Draggable.init("class"))
-        .done()
+const Container = div(
+    decorate.init({ class: "articleContainer" })
+            .with(Draggable.init("class"))
+            .done()
+)
 ```
 
 Putting it all together looks like this. The component below is composed with the all of the decorations - highlighter, clickable, and draggable.
