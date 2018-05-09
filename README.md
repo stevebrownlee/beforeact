@@ -135,6 +135,48 @@ Then I can render it.
 factory.render("#content", Article)
 ```
 
+## Composing Additional Behaviors
+
+Using the `decorate` function - which you can find in _Elements.js_ - you can add additional behavior to any component you build.
+
+In _Highlighter.js_ you will see that invoking `Highlighter.init()` returns an object with `onmouseout` and `onmouseover` properties. You can apply this to any component where you want the background color to change when the user hovers over it.
+
+The syntax to make something highlightable (?) looks like this.
+
+```js
+decorate.init()
+        .with(Highlighter.init("highlight--goldenrod"))
+        .done()
+```
+
+How about making something clickable?
+
+```js
+decorate.init()
+        .with(Clickable.init(() => console.log("Hi")))
+        .done()
+```
+
+Draggable? The `init()` method should be provided with the value of "class" or "id". It will use the `classList` property, or the `id` property to identify the component that is being dragged.
+
+```js
+decorate.init()
+        .with(Draggable.init("class"))
+        .done()
+```
+
+Putting it all together looks like this. The component below is composed with the all of the decorations - highlighter, clickable, and draggable.
+
+```js
+const ArticleHeader = header(
+    decorate.init({ className: "article__header", id: "articleHeader" })
+            .with(Highlighter.init("highlight--goldenrod"))
+            .with(Clickable.init(() => console.log("Hi")))
+            .with(Draggable.init("class"))
+            .done()
+)
+```
+
 ## Component Factory
 
 If you look at the `ComponentFactory.js` file, you will immediately notice that I have a function argument preceded by ellipsis.
