@@ -1,0 +1,6 @@
+default:
+  - "eslint"
+  - "browserify"
+  - "uglify"
+  - "copy"
+  - "watch"

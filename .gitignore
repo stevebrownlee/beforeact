@@ -8,3 +8,4 @@ obj
 *.db
 *.sqlite3
 .vscode
+dist

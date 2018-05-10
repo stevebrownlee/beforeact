@@ -44,3 +44,5 @@ const ComponentFactory = () => { /* eslint no-unused-vars: "off" */
         }
     })
 }
+
+module.exports = ComponentFactory

@@ -1,3 +1,6 @@
+const components = require("./components")
+const decoration = require("./decorators")
+
 /* eslint no-undef: "off" */
 const Title = h1("Letters from a Stoic")
 
