@@ -25,3 +25,5 @@ const Droppable = Object.create(null, {
         }
     }
 })
+
+module.exports = Droppable

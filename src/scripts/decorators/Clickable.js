@@ -16,3 +16,5 @@ const Clickable = Object.create(null, {
         }
     }
 })
+
+module.exports = Clickable

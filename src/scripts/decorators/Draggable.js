@@ -26,3 +26,5 @@ const Draggable = Object.create(null, {
         }
     }
 })
+
+module.exports = Draggable

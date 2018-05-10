@@ -27,3 +27,5 @@ const Highlighter = Object.create(null, {
         }
     }
 })
+
+module.exports = Highlighter

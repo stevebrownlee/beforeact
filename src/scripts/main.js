@@ -1,5 +1,6 @@
-const components = require("./components")
-const decoration = require("./decorators")
+const { factory, div, article, section, p, h1, header } = require("./components")
+const { decorate, clickable, draggable, droppable, highlighter } = require("./decorators")
+const juan = require("./data/juan")
 
 /* eslint no-undef: "off" */
 const Title = h1("Letters from a Stoic")
@@ -13,9 +14,9 @@ const Title = h1("Letters from a Stoic")
 */
 const ArticleHeader = header(
     decorate.init({ className: "article__header", id: "articleHeader" })
-            .with(Highlighter.init("highlight--goldenrod"))
-            .with(Clickable.init(() => console.log("Hi")))
-            .with(Draggable.init("class"))
+            .with(highlighter.init("highlight--goldenrod"))
+            .with(clickable.init(() => console.log("Hi")))
+            .with(draggable.init("class"))
             .done(),
     Title
 )
@@ -50,12 +51,12 @@ factory.render("#simple-components", Article)
 
 /**
  * Build a component that has multiple <section> child components,
- * one for each key on the JuanRodriguezPatient object.
+ * one for each key on the `juan` object.
  */
 const PatientProperties = div({},
-    Object.keys(JuanRodriguezPatient)
+    Object.keys(juan)
           .map(key => {
-              return section({}, `${key}: ${JuanRodriguezPatient[key]}`)
+              return section({}, `${key}: ${juan[key]}`)
           })
 )
 
@@ -65,7 +66,7 @@ const PatientProperties = div({},
  */
 const Juan = article(
     decorate.init({ id: "juan", className: "patientDetails" })
-            .with(Droppable.init())
+            .with(droppable.init())
             .done()
     ,
     PatientProperties

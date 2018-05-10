@@ -10,5 +10,5 @@ const h1 = (...props) => factory.build("h1", ...props)
 const header = (...props) => factory.build("header", ...props)
 
 module.exports = {
-    div, article, section, p, h1, header
+    factory, div, article, section, p, h1, header
 }

@@ -8,11 +8,6 @@ module.exports = {
         }, {
             expand: true,
             cwd: ".",
-            src: "data/*",
-            dest: "../dist/"
-        }, {
-            expand: true,
-            cwd: ".",
             src: "index.html",
             dest: "../dist/"
         }]

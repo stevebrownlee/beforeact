@@ -3,4 +3,5 @@ default:
   - "browserify"
   - "uglify"
   - "copy"
+  - "http-server"
   - "watch"
