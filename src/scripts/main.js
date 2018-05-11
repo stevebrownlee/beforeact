@@ -75,65 +75,61 @@ factory.render("#simple-components", Article)
  * Build a component that has multiple <section> child components,
  * one for each key on the `juan` object.
  */
-fetch("http://localhost:8088/patients/1")
-    .then(r => r.json())
-    .then(juan => {
-        const PatientProperties = div(
-            // Props for the <div> component. No specific props, so empty object.
-            {},
+const PatientProperties = div(
+    // Props for the <div> component. No specific props, so empty object.
+    {},
 
-            // Render each property of `juan` as a child <section> component
-            Object.keys(juan)
-                  .map(key => {
-                      return section({}, `${key}: ${juan[key]}`)
-                  })
-        )
+    // Render each property of `juan` as a child <section> component
+    Object.keys(juan)
+            .map(key => {
+                return section({}, `${key}: ${juan[key]}`)
+            })
+)
 
-        /**
-         * Build an <article> component, and specify the PatientProperties
-         * component as it's child
-         */
-        const Juan = article(
-            /*
-                Decorate the base props object with the `droppable` decoration
-                so that any draggable element can be dropped in it
-            */
-            decorate().init({ id: "juan", className: "patientDetails" })
-                    .with(droppable.init())
-                    .done()
-            ,
+/**
+ * Build an <article> component, and specify the PatientProperties
+ * component as it's child
+ */
+const Juan = article(
+    /*
+        Decorate the base props object with the `droppable` decoration
+        so that any draggable element can be dropped in it
+    */
+    decorate().init({ id: "juan", className: "patientDetails" })
+            .with(droppable.init())
+            .done()
+    ,
 
-            // The <div> we defined above will be a child of this <article>
-            PatientProperties
-        )
+    // The <div> we defined above will be a child of this <article>
+    PatientProperties
+)
 
 
-        /**
-         * Build a <div> component with an <h1> element as its child
-         */
-        const Header = div(
-            { className: "patientHeader" },  // Props of <div>
-            h1("Patients")  // Child <h1> element of <div>
-        )
+/**
+ * Build a <div> component with an <h1> element as its child
+ */
+const Header = div(
+    { className: "patientHeader" },  // Props of <div>
+    h1("Patients")  // Child <h1> element of <div>
+)
 
-        /**
-         * Build a Page component and specify two children:
-         *    1. Header
-         *    2. Juan
-         *
-         * They will be siblings to each other
-         */
-        const Patient = article(
-            { className: "container patientList" },  // Props of <article>
-            Header, Juan   // Two child components
-        )
+/**
+ * Build a Page component and specify two children:
+ *    1. Header
+ *    2. Juan
+ *
+ * They will be siblings to each other
+ */
+const Patient = article(
+    { className: "container patientList" },  // Props of <article>
+    Header, Juan   // Two child components
+)
 
 
-        /**
-         * Render the Patient component to a specific DOM element
-         */
-        factory.render("#array-components", Patient)
-    })
+/**
+ * Render the Patient component to a specific DOM element
+ */
+factory.render("#array-components", Patient)
 
 
 
