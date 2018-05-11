@@ -10,7 +10,7 @@ const Title = h1("Letters from a Stoic")
 * be appended as a child of the containing element
 *
 */
-const ArticleHeader = header(
+const NonInteractiveHeader = header(
     // Props for the <header> component
     { className: "article__header", id: "articleHeader" },
 
