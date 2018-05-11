@@ -1,4 +1,10 @@
+.highlight--goldenrod {
+    background-color: lightgoldenrodyellow;
+}
 
+.highlight--smoke {
+    background-color: whitesmoke;
+}
 
 key {
     font-weight: bolder;

@@ -3,7 +3,7 @@
 
 
 // Advanced object creation with control over enumerable properties
-const JuanRodriguezPatient = Object.create({}, { /* eslint no-unused-vars: "off" */
+const JuanRodriguezPatient = Object.create(null, { /* eslint no-unused-vars: "off" */
     firstName: {
         value: "Juan",
         enumerable: true
@@ -40,3 +40,5 @@ const JuanRodriguezPatient = Object.create({}, { /* eslint no-unused-vars: "off"
         }
     }
 })
+
+module.exports = JuanRodriguezPatient
