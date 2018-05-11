@@ -5,8 +5,13 @@ This repository is the end goal for VanillaJS education before students are intr
 ## Setup
 
 1. Clone repo
-1. Start `http-server` - or equivalent - in repo directory
-1. Open the URL in the browser, et voilà
+1. `cd src`
+1. `npm install`
+1. `grunt`
+
+Grunt will run browserify to bundle the files, copy all needed files to a `dist` directory, and then fire up a simple HTTP server in `dist`.
+ 
+Open the URL in the browser, et voilà.
 
 ## Building HTMLElement Templates
 
