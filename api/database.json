@@ -1,0 +1,13 @@
+{
+	"patients": [
+		{
+			"id": 1,
+			"first_name": "Juan",
+			"last_name": "Rodriguez",
+			"address": "100 Main Street",
+			"zip_code": "50192",
+			"dob": "12/13/1985",
+			"gender": "M"
+		}
+	]
+}

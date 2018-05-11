@@ -4,4 +4,5 @@ default:
   - "uglify"
   - "copy"
   - "http-server"
+  - "bgShell:launchAPI"
   - "watch"

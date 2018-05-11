@@ -4,6 +4,7 @@ module.exports = {
         tasks: ["eslint", "browserify", "uglify", "copy"],
         options: {
             spawn: false,
-        },
+            debounceDelay: 1000
+        }
     }
 }

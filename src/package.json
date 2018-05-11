@@ -18,6 +18,7 @@
   "homepage": "",
   "devDependencies": {
     "grunt": "^1.0.2",
+    "grunt-bg-shell": "^2.3.3",
     "grunt-browserify": "^5.3.0",
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-uglify-es": "git://github.com/gruntjs/grunt-contrib-uglify.git#harmony",
@@ -25,5 +26,6 @@
     "grunt-eslint": "^20.1.0",
     "grunt-http-server": "^2.1.0",
     "load-grunt-config": "^0.19.2"
-  }
+  },
+  "dependencies": {}
 }
