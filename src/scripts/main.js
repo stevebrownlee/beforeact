@@ -82,7 +82,7 @@ const PatientProperties = div(
     // Render each property of `juan` as a child <section> component
     Object.keys(juan)
             .map(key => {
-                return section({}, `${key}: ${juan[key]}`)
+                return section(`${key}: ${juan[key]}`)
             })
 )
 
